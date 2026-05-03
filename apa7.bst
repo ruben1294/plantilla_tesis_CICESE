@@ -43,7 +43,8 @@ ENTRY
     journal
     key
 %    month		not used in apalike
-    note
+% 2026/05/02: las notas es texto que el estudiantado agrega en programas gestores de referencias, como Mendeley. Realmente no deberían formar parte de la lista de referencias, ya que son notas personales y no información para compartir en la lista.
+%    note
     number
     organization
     pages
@@ -793,7 +794,7 @@ FUNCTION {article}
     }
   if$
   new.block
-  note output
+  %  note output
   format.doi output
   fin.entry
 }
@@ -829,7 +830,7 @@ FUNCTION {book}
     }
   if$
   new.block
-  note output
+%  note output
   fin.entry
 }
 
@@ -844,7 +845,7 @@ FUNCTION {booklet}
   howpublished output
   address output
   new.block
-  note output
+%  note output
   fin.entry
 }
 
@@ -879,7 +880,7 @@ FUNCTION {inbook}
     }
   if$
   new.block
-  note output
+  %  note output
   fin.entry
 }
 
@@ -906,7 +907,7 @@ FUNCTION {incollection}
     }
   if$
   new.block
-  note output
+  %  note output
   fin.entry
 }
 
@@ -933,7 +934,7 @@ FUNCTION {inproceedings}
     }
   if$
   new.block
-  note output
+  %  note output
   format.doi output
   
   fin.entry
@@ -953,7 +954,7 @@ FUNCTION {manual}
   address output
   format.edition output2
   new.block
-  note output
+%  note output
   fin.entry
 }
 
@@ -970,7 +971,7 @@ FUNCTION {mastersthesis}
   %school "school" output.check
   address output
   new.block
-  note output
+%  note output
   fin.entry
 }
 
@@ -984,7 +985,7 @@ FUNCTION {misc}
   new.block
   howpublished output
   new.block
-  note output
+%  note output
   fin.entry
 }
 
@@ -1000,7 +1001,7 @@ FUNCTION {phdthesis}
   school "school" output.check
   address output
   new.block
-  note output
+%  note output
   fin.entry
 }
 
@@ -1018,7 +1019,7 @@ FUNCTION {proceedings}
   organization output				% a nonempty organization
   publisher output				% here
   new.block
-  note output
+%  note output
   format.doi output
   fin.entry
 }
@@ -1036,7 +1037,7 @@ FUNCTION {techreport}
   institution "institution" output.check
   address output
   new.block
-  note output
+  %  note output
   fin.entry
 }
 
@@ -1048,7 +1049,7 @@ FUNCTION {unpublished}
   new.block
   format.title "title" output.check
   new.block
-  note "note" output.check
+%  note "note" output.check
   fin.entry
 }
 

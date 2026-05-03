@@ -173,7 +173,12 @@
 
 % Nombre de tu director de tesis, si tienes codirector repite el comando
 \director{Dr./Dra. Xxxx Xxxx Xxxx}
+\titulodirector{Directora de tesis}
+%\titulocodirectoruno{Codirector de tesis}
+
 %\director{Dr./Dra. Xxxx Xxxx Xxxx}
+%\titulocodirectordos{Codirector de tesis}
+
 % Nombre de tu director de tesis en inglés, si tienes codirector repite el comando
 \directorIN{PhD Xxxx Xxxx Xxxx}
 %\directorIN{PhD Xxxx Xxxx Xxxx}
@@ -253,7 +258,8 @@
 \addcontentsline{toc}{chapter}{\normalsize\expandafter{Literatura citada} \protect\texorpdfstring{\normalfont\protect\dotfill}{}}
 {\normalsize
 \bibliographystyle{apa7} 
-\nocite{*}
+% 2026/05/02: El comando \nocite{*} es para que todas las referencias contenidas en el archivo "export.bib", se incluyan en la sección de "Literatura citada". Sin este comando, sólo se incluyen aquellas referencias que realmente se citan en el documento, lo que nos da una lista más limpia y compacta.
+%\nocite{*}
 \bibliography{literaturaTesis}
 }
 

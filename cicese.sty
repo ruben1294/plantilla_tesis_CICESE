@@ -135,6 +135,19 @@
    \addtocounter{dal@supervisornumIN}{1}%
 }
 
+% 2026/05/02: Se define un nuevo comando para facilitar el cambio de género en los títulos de los directores de tesis. Antes, esto se debía hacer dentro de este mismo archivo; con este nuevo comando, el cambio se puede hacer directamente en el archivo "tesisCICESE.text", que es más sencillo e intuitivo de hacer para el estudiantado. Se aplica la misma lógica para el caso de la codirección.
+% Director/directora
+\def\@titulodirector{Director de tesis}
+\newcommand{\titulodirector}[1]{\def\@titulodirector{#1}}
+
+% Codirector/codirectora 1
+\def\@titulocodirectoruno{Codirector de tesis} 
+\newcommand{\titulocodirectoruno}[1]{\def\@titulocodirectoruno{#1}}
+
+% Codirector/codirectora 2
+\def\@titulocodirectordos{Codirector de tesis} 
+\newcommand{\titulocodirectordos}[1]{\def\@titulocodirectordos{#1}}
+
 
 \def\signature#1#2{\parbox[b]{1in}{}
 \parbox[bt]{2.8in}{\shortstack{\vrule width 2.8in height 0pt\\
@@ -205,7 +218,7 @@
 	\vspace{17.5cm}
 		La investigación reportada en esta tesis es parte de los programas de investigación del CICESE (Centro de Investigación Científica y de Educación Superior de Ensenada, Baja California).
 \\
-La investigación fue financiada por el SECIHTI (Secretaría de Ciencia, Humanidades, Tecnología e Innovación).
+La investigación fue financiada por la SECIHTI (Secretaría de Ciencia, Humanidades, Tecnología e Innovación).
 \\
 Todo el material contenido en esta tesis está protegido por la Ley Federal del Derecho de Autor (LFDA) de los Estados Unidos Mexicanos (México). El uso de imágenes, fragmentos de videos, y demás material que sea objeto de protección de los derechos de autor, será exclusivamente para fines educativos e informativos y deberá citar la fuente donde la obtuvo mencionando el autor o autores. Cualquier uso distinto como el lucro, reproducción, edición o modificación, será perseguido y sancionado por el respectivo o titular de los Derechos de Autor.  
 \\
@@ -306,17 +319,18 @@ Ensenada, Baja California, M\'exico
         %con un solo director
         \ifnum\value{dal@supervisornum}=1%
 %                \signature{\vspace{-1.5mm}\@firstsupervisor}{\emph{Director del Comit\'e}}
-                \signature{\vspace{-1.5mm}\@firstsupervisor}{Director de tesis}
+                \signature{\vspace{-1.5mm}\@firstsupervisor}{\@titulodirector}
         \fi
         
         %con dos directores
+        % 2026/05/02: actualizado para poder modificar el género de los/las codirectores/as, como se explica más arriba.
         \ifnum\value{dal@supervisornum}=2%
         \hskip -0.5in
 %                \signature{\@firstsupervisor}{\emph{Codirector del Comit\'e}}
-                \hspace{1.3cm}\signature{\@firstsupervisor}{Codirector de tesis}
+                \hspace{1.3cm}\signature{\@firstsupervisor}{\@titulocodirectoruno}
         \hskip 0.5in
 %                \signature{\@secondsupervisor}{\emph{Codirector del Comit\'e}}
-                \signature{\@secondsupervisor}{Codirector de tesis}
+                \signature{\@secondsupervisor}{\@titulocodirectordos}
                 
         \fi
 
@@ -573,7 +587,7 @@ Resumen aprobado por:
         \ifnum\value{dal@supervisornum}=1%
 				      \begin{flushright}
 %              \signature{\vspace{-1.5mm}\@firstsupervisor}{\emph{Director del Comit\'e}}
-               \signature{\vspace{-1.5mm}\@firstsupervisor}{Director de tesis}
+               \signature{\vspace{-1.5mm}\@firstsupervisor}{\@titulodirector}
 							\end{flushright}
         \fi
         %con dos directores
@@ -581,10 +595,10 @@ Resumen aprobado por:
            \vspace{1.0cm}
 				   \hskip -0.3in
 %            \signature{\@firstsupervisor}{\emph{Codirector del Comit\'e}}
-            \hspace{0.8cm}\signature{\@firstsupervisor}{Codirector de tesis}
+            \hspace{0.8cm}\signature{\@firstsupervisor}{\@titulocodirectoruno}
             \hskip 0.8in
 %            \signature{\@secondsupervisor}{\emph{Codirector del Comit\'e}}
-            \signature{\@secondsupervisor}{Codirector de tesis}      
+            \signature{\@secondsupervisor}{\@titulocodirectordos}      
         \fi
 
 \vspace{0.25cm}
